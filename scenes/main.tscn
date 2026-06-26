@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://gpbfdh4hlli6"]
 
+[ext_resource type="PackedScene" uid="uid://kp3jic2e6jql" path="res://scenes/test/TestUI.tscn" id="1_o5qli"]
+
 [node name="Main" type="Node" unique_id=623545876]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=509902267]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=249925814]
+
+[node name="TestUi" parent="CanvasLayer" unique_id=2081178485 instance=ExtResource("1_o5qli")]
