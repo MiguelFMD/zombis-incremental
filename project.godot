@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="zombis_incremental"
+run/main_scene="uid://gpbfdh4hlli6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ZombieManager="*uid://b4ql4id8n8y22"
 
 [physics]
 

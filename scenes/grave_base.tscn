@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dchrhq84cns8g"]
+
+[ext_resource type="Script" uid="uid://dlknbt2xgddh7" path="res://scenes/grave_base.gd" id="1_brnj0"]
+[ext_resource type="Texture2D" uid="uid://b8c5qi2pmrdy6" path="res://icon.svg" id="2_8hnol"]
+
+[node name="GraveBase" type="Node2D" unique_id=161415757]
+script = ExtResource("1_brnj0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=159493941]
+modulate = Color(0.7672088, 0.2643439, 3.7541986e-06, 1)
+texture = ExtResource("2_8hnol")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b4ql4id8n8y22"]
+
+[ext_resource type="Script" uid="uid://bpfrgtobvpxjj" path="res://scenes/zombie_manager.gd" id="1_rdd38"]
+
+[node name="ZombieManager" type="Node" unique_id=248021572]
+script = ExtResource("1_rdd38")
