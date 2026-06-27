@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://gpbfdh4hlli6"]
 
 [ext_resource type="PackedScene" uid="uid://kp3jic2e6jql" path="res://scenes/test/TestUI.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dchrhq84cns8g" path="res://scenes/grave_base.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node" unique_id=623545876]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=509902267]
 
+[node name="GraveBase" parent="." unique_id=161415757 instance=ExtResource("2_0wfyh")]
+position = Vector2(-385, 191)
+
+[node name="GraveBase2" parent="." unique_id=357398618 instance=ExtResource("2_0wfyh")]
+position = Vector2(357, -191)
+zombies_amount = 2
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=249925814]
+visible = false
 
 [node name="TestUi" parent="CanvasLayer" unique_id=2081178485 instance=ExtResource("1_o5qli")]

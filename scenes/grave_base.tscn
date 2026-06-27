@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dlknbt2xgddh7" path="res://scenes/grave_base.gd" id="1_brnj0"]
 [ext_resource type="Texture2D" uid="uid://b8c5qi2pmrdy6" path="res://icon.svg" id="2_8hnol"]
+[ext_resource type="PackedScene" uid="uid://pkgnryg7u7mw" path="res://scenes/health_component.tscn" id="3_on5tq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hnol"]
+size = Vector2(125, 125)
 
 [node name="GraveBase" type="Node2D" unique_id=161415757]
 script = ExtResource("1_brnj0")
@@ -9,3 +13,13 @@ script = ExtResource("1_brnj0")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=159493941]
 modulate = Color(0.7672088, 0.2643439, 3.7541986e-06, 1)
 texture = ExtResource("2_8hnol")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=114972570]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=785159106]
+shape = SubResource("RectangleShape2D_8hnol")
+
+[node name="HealthComponent" parent="." unique_id=711055347 instance=ExtResource("3_on5tq")]
+position = Vector2(0, 93)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

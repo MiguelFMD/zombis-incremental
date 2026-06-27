@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://pkgnryg7u7mw"]
+
+[ext_resource type="Script" uid="uid://cr71sei1ebd8f" path="res://scenes/health_component.gd" id="1_2clxd"]
+
+[node name="HealthComponent" type="Node2D" unique_id=916921137]
+script = ExtResource("1_2clxd")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=146251923]
+custom_minimum_size = Vector2(200, 50)
+anchors_preset = -1
+anchor_right = 0.25868055
+anchor_bottom = 0.13117284
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+metadata/_edit_use_anchors_ = true
