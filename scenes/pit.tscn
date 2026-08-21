@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dqigv1rn375po"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pit"]
+size = Vector2(200, 200)
+
+[node name="Pit" type="Area2D" unique_id=379863044 groups=["Pit"]]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1074024240]
+shape = SubResource("RectangleShape2D_pit")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1483689658]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+color = Color(0.1, 0, 0.15, 1)
+mouse_filter = 2

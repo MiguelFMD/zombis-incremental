@@ -12,13 +12,19 @@ config_version=5
 
 config/name="zombis_incremental"
 run/main_scene="uid://gpbfdh4hlli6"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameEvents="*uid://bhj1b0clfnhh3"
 ZombieManager="*uid://b4ql4id8n8y22"
+GameManager="*uid://bxvedkiooc3ep"
+
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=720
 
 [input]
 
@@ -31,6 +37,7 @@ click={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+common/enable_object_picking="true"
 
 [rendering]
 

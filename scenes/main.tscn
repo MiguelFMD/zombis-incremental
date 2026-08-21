@@ -1,20 +1,74 @@
 [gd_scene format=3 uid="uid://gpbfdh4hlli6"]
 
-[ext_resource type="PackedScene" uid="uid://kp3jic2e6jql" path="res://scenes/test/TestUI.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://dchrhq84cns8g" path="res://scenes/grave_base.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://bxevdp63evlpf" path="res://scenes/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://dknq3qyhya081" path="res://scenes/grid_manager.gd" id="2_grid"]
+[ext_resource type="PackedScene" uid="uid://dchrhq84cns8g" path="res://scenes/grave.tscn" id="3_grave"]
+[ext_resource type="PackedScene" uid="uid://dqigv1rn375po" path="res://scenes/pit.tscn" id="4_pit"]
 
-[node name="Main" type="Node" unique_id=623545876]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_game"]
+vertices = PackedVector2Array(-600, -400, 600, -400, 600, 400, -600, 400)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=509902267]
+[node name="Main" type="Node2D" unique_id=1122470020]
+script = ExtResource("1_main")
 
-[node name="GraveBase" parent="." unique_id=161415757 instance=ExtResource("2_0wfyh")]
-position = Vector2(-385, 191)
+[node name="GridManager" type="Node" parent="." unique_id=1462440941]
+script = ExtResource("2_grid")
 
-[node name="GraveBase2" parent="." unique_id=357398618 instance=ExtResource("2_0wfyh")]
-position = Vector2(357, -191)
-zombies_amount = 2
+[node name="Environment" type="Node2D" parent="." unique_id=570994504]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=249925814]
-visible = false
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Environment" unique_id=1375401348]
+navigation_polygon = SubResource("NavigationPolygon_game")
 
-[node name="TestUi" parent="CanvasLayer" unique_id=2081178485 instance=ExtResource("1_o5qli")]
+[node name="Pit" parent="." unique_id=1022945631 instance=ExtResource("4_pit")]
+position = Vector2(400, 250)
+
+[node name="GravesContainer" type="Node2D" parent="." unique_id=1911899194]
+
+[node name="Grave" parent="GravesContainer" unique_id=1983812095 instance=ExtResource("3_grave")]
+position = Vector2(-241, 124)
+
+[node name="Grave2" parent="GravesContainer" unique_id=1371045050 instance=ExtResource("3_grave")]
+position = Vector2(261, -144)
+zombies_to_spawn = 2
+
+[node name="Grave3" parent="GravesContainer" unique_id=454991793 instance=ExtResource("3_grave")]
+position = Vector2(-250, -221)
+zombies_to_spawn = 2
+
+[node name="ZombiesContainer" type="Node2D" parent="." unique_id=498235828]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=945606604]
+
+[node name="CanvasLayer_UI" type="CanvasLayer" parent="." unique_id=2100085603]
+
+[node name="Control_HUD" type="Control" parent="CanvasLayer_UI" unique_id=1580256127]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label_ZombiesVivos" type="Label" parent="CanvasLayer_UI/Control_HUD" unique_id=506331748]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 250.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+text = "Zombies vivos: 0"
+
+[node name="Label_Sacrificados" type="Label" parent="CanvasLayer_UI/Control_HUD" unique_id=1180927657]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 36.0
+offset_right = 250.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+text = "Sacrificados: 0"
