@@ -19,6 +19,4 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
-addons/ziva_agent/ziva_agent.gdextension
-addons/ziva_agent/zivacode/windows_x86_64/zivacode.exe
-addons/ziva_agent/ziva_agent.gdextension.uid
+addons/ziva_agent
