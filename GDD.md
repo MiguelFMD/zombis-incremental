@@ -1,5 +1,4 @@
 # 📄 GDD Técnico: "Undead Excavator" (Incremental Idle Game)
-
 **Motor:** Godot Engine 4.7 (Estricto)
 **Perspectiva:** 2D Top-Down Point&Click (Grid-based)
 **Arte:** Programmer Art (ColorRects, Polygon2D). No solicitar assets externos.
