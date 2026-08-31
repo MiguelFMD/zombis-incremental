@@ -19,3 +19,7 @@ export_credentials.cfg
 data_*/
 mono_crash.*.json
 addons/ziva_agent
+
+
+# Force git to track Ziva's local history/config
+!addons/ziva/history/
