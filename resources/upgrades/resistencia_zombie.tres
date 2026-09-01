@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/upgrade_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = "resistencia_zombie"
+upgrade_name = "Resistencia Zombie"
+cost = 10
+description = "Los zombies excavan durante más tiempo antes de descansar."
+connected_ids = ["la_peste_1"]

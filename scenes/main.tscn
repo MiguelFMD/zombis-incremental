@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dknq3qyhya081" path="res://scenes/grid_manager.gd" id="2_grid"]
 [ext_resource type="PackedScene" uid="uid://dchrhq84cns8g" path="res://scenes/grave.tscn" id="3_grave"]
 [ext_resource type="PackedScene" uid="uid://dqigv1rn375po" path="res://scenes/pit.tscn" id="4_pit"]
+[ext_resource type="PackedScene" uid="uid://didcpy3srsk4f" path="res://scenes/shop_menu.tscn" id="5_shop"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_game"]
 vertices = PackedVector2Array(-600, -400, 600, -400, 600, 400, -600, 400)
@@ -72,3 +73,13 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 text = "Sacrificados: 0"
+
+[node name="Button_Shop" type="Button" parent="CanvasLayer_UI/Control_HUD" unique_id=1686556824]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 8.0
+offset_right = 1180.0
+offset_bottom = 46.0
+text = "TIENDA"
+
+[node name="ShopMenu" parent="CanvasLayer_UI" unique_id=484623157 instance=ExtResource("5_shop")]

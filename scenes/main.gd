@@ -6,6 +6,8 @@ extends Node2D
 @onready var grid_manager: Node = $GridManager
 @onready var label_zombies_vivos: Label = $CanvasLayer_UI/Control_HUD/Label_ZombiesVivos
 @onready var label_sacrificados: Label = $CanvasLayer_UI/Control_HUD/Label_Sacrificados
+@onready var button_shop: Button = $CanvasLayer_UI/Control_HUD/Button_Shop
+@onready var shop_menu: Control = $CanvasLayer_UI/ShopMenu
 
 var zombie_spawn_separation: float = 50.0
 var zombie_count: int = 0
@@ -16,6 +18,8 @@ func _ready() -> void:
     for grave: Grave in graves_container.get_children():
         _connect_grave(grave)
     GameManager.currency_updated.connect(_on_currency_updated)
+    button_shop.pressed.connect(_on_shop_pressed)
+    GameManager.grave_spawn_requested.connect(_on_peste_spawn_grave)
     _update_ui()
 
 
@@ -53,6 +57,21 @@ func _on_zombie_sacrificed() -> void:
 
 func _on_currency_updated(_new_amount: int) -> void:
     _update_ui()
+
+
+func _on_shop_pressed() -> void:
+    shop_menu.visible = not shop_menu.visible
+
+
+func _on_peste_spawn_grave() -> void:
+    var grave_scene: PackedScene = preload("res://scenes/grave.tscn")
+    var grave: Grave = grave_scene.instantiate()
+    var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+    var spawn_x: float = rng.randf_range(-500.0, 500.0)
+    var spawn_y: float = rng.randf_range(-300.0, 300.0)
+    grave.position = Vector2(spawn_x, spawn_y)
+    graves_container.add_child(grave)
+    _connect_grave(grave)
 
 
 func _update_ui() -> void:

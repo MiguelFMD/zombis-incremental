@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/upgrade_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = "la_peste_1"
+upgrade_name = "La Peste Nvl.1"
+cost = 5
+description = "Genera 1 tumba aleatoria en pantalla cada minuto."
+connected_ids = []
